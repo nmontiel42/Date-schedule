@@ -4,37 +4,42 @@ import './index.css';
 import confetti from 'canvas-confetti';
 
 function App() {
-  const [nombre, setNombre] = useState('');
+  const [nombre1, setNombre1] = useState('');
+  const [nombre2, setNombre2] = useState('');
   const [fecha, setFecha] = useState('');
   const [hora, setHora] = useState('');
-  const [correo, setCorreo] = useState('');
+  const [myMail, setMyMail] = useState('');
   const [idea, setIdea] = useState('');
   const [isAppointmentPage, setIsAppointmentPage] = useState(false); // Estado para controlar la página actual
+  const [userMail, setUserMail] = useState(''); // Nuevo estado para el myMail del destinatario
+
 
   // Inicializa EmailJS con tu User ID
   emailjs.init("Blv9Mk9RLGdaplRur");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
     // Configuración del email a enviar
     const templateParamsForMe = {
-      nombre: nombre,
+      nombre1: nombre1,
+      nombre2: nombre2,
       fecha: fecha,
       hora: hora,
       idea: idea,
-      correo: 'nek.mon.arc@gmail.com' // Siempre se enviará a este correo
+      myMail: myMail
     };
-
+    
     const templateParamsForUser = {
-      nombre: nombre,
+      nombre1: nombre1,
+      nombre2: nombre2,
       fecha: fecha,
       hora: hora,
       idea: idea,
-      user_email: correo // Aquí debe coincidir con el nombre en la plantilla
+      userMail: userMail
     };
-
-    // Enviar el correo a través de EmailJS
+  
+    // Enviar el myMail a través de EmailJS
     emailjs.send('service_aadp9gj', 'template_dflzqjo', templateParamsForMe)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
@@ -44,17 +49,19 @@ function App() {
         console.error('Error sending the mail:', error);
         alert('Error while scheduling the appointment. Please try again.');
       });
-
+  
     emailjs.send('service_aadp9gj', 'template_pt9vx87', templateParamsForUser)
-
-    // Limpia el formulario
-    setNombre('');
+  
+    // Limpia todos los campos del formulario
+    setNombre1('');
+    setNombre2(''); // Asegúrate de limpiar también el campo del nombre de la cita
+    setMyMail('');
+    setUserMail('');
     setFecha('');
     setHora('');
-    setCorreo('');
-    setCita('');
-    setOtro('');
-    setIdea('');
+    setIdea(''); // Asegúrate de limpiar el campo de la idea también
+  
+    // Si hay otros estados que desees limpiar, añádelos aquí
   };
 
   // Funciones para cambiar la pantalla
@@ -84,22 +91,45 @@ function App() {
             <input
               className="rounded-lg border-2 border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
               type="text"
-              id="nombre"
+              id="nombre1"
               placeholder="Tu nombre"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
+              value={nombre1}
+              onChange={(e) => setNombre1(e.target.value)}
               required
             />
 
-            <p className='cursor-default'>¿A donde envio la informacion? </p>
+            <p className='cursor-default'>¿Cuál es tu myMail? </p>
 
             <input
               className="rounded-lg border-2 border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
               type="email"
-              id="correo"
+              id="userMail"
               placeholder="Tu correo"
-              value={correo}
-              onChange={(e) => setCorreo(e.target.value)}
+              value={userMail}
+              onChange={(e) => setUserMail(e.target.value)} // Actualiza el estado
+              required
+            />
+
+            <p>Nombre de tu cita</p>
+            <input
+              className="rounded-lg border-2 border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              type="text"
+              id="nombre2"
+              placeholder="Su nombre"
+              value={nombre2}
+              onChange={(e) => setNombre2(e.target.value)}
+              required
+            />
+
+
+            <p>¿a quien le pides una cita?</p>
+            <input
+              className="rounded-lg border-2 border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              type="email"
+              id="myMail"
+              placeholder="Su correo"
+              value={myMail}
+              onChange={(e) => setMyMail(e.target.value)} // Actualiza el estado
               required
             />
 
