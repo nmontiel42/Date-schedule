@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-tl from-green-200 to-purple-300 h-screen items-center"
      style={{
-       backgroundImage: 'url(public/731a5dd697afa69c26ffaa57c7b7008e.png)',
+       backgroundImage: 'url(/731a5dd697afa69c26ffaa57c7b7008e.png)',
        backgroundSize: 'cover', // Cambia esto para cubrir el área completa
        backgroundPosition: 'center', // Centra la imagen
        backgroundBlendMode: 'overlay', // Combina el degradado y la imagen
