@@ -6,9 +6,18 @@ function App() {
   const [fecha, setFecha] = useState('');
   const [hora, setHora] = useState('');
   const [correo, setCorreo] = useState('');
+  const [cita, setCita] = useState('');
+  const [otro, setOtro] = useState('');
 
   // Inicializa EmailJS con tu User ID
   emailjs.init("Blv9Mk9RLGdaplRur");
+
+  const handleCitaChange = (value) => {
+    setCita(value);
+    if (value !== 'otro') {
+      setOtro(''); // Limpia el campo de texto si no se selecciona "Otro"
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,6 +27,8 @@ function App() {
       nombre: nombre,
       fecha: fecha,
       hora: hora,
+      cita: cita,
+      otro: otro,
       correo: 'nek.mon.arc@gmail.com' // Siempre se enviará a este correo
     };
 
@@ -25,6 +36,8 @@ function App() {
       nombre: nombre,
       fecha: fecha,
       hora: hora,
+      cita: cita,
+      otro: otro,
       user_email: correo // Aquí debe coincidir con el nombre en la plantilla
     };
 
@@ -45,6 +58,8 @@ function App() {
     setFecha('');
     setHora('');
     setCorreo('');
+    setCita('');
+    setOtro('');
   };
 
   return (
@@ -82,6 +97,73 @@ function App() {
           onChange={(e) => setHora(e.target.value)}
           required
         />
+        
+        <h3>Selecciona tu cita:</h3>
+        <div>
+          <label>
+            <input
+              type="radio"
+              value="Salir de Picnic"
+              checked={cita === 'Salir de Picnic'}
+              onChange={() => handleCitaChange('Salir de Picnic')}
+            />
+            <img src="public/all-our-favorites.webp" alt="Picnic" style={{ width: '100px', height: 'auto' }} />
+            Salir de Picnic
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="Salir a cenar"
+              checked={cita === 'Salir a cenar'}
+              onChange={() => handleCitaChange('Salir a cenar')}
+            />
+            <img src="public/Christmas_table_(Serbian_cuisine).webp" alt="Cena" style={{ width: '100px', height: 'auto' }} />
+            Salir a cenar
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="Noche de juegos"
+              checked={cita === 'Noche de juegos'}
+              onChange={() => handleCitaChange('Noche de juegos')}
+            />
+            <img src="public/juegos-de-mesa.webp" alt="Juegos" style={{ width: '100px', height: 'auto' }} />
+            Noche de juegos
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="Sesion de belleza"
+              checked={cita === 'Sesion de belleza'}
+              onChange={() => handleCitaChange('Sesion de belleza')}
+            />
+            <img src="public/mascarilla-facial.webp" alt="Belleza" style={{ width: '100px', height: 'auto' }} />
+            Sesion de belleza
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="otro"
+              checked={cita === 'otro'}
+              onChange={() => handleCitaChange('otro')}
+            />
+            Otra idea
+          </label>
+          {/* Campo de texto que aparece solo si se selecciona "Otro" */}
+          {cita === 'otro' && (
+            <input
+              type="text"
+              id="otro"
+              placeholder="Escribe tu idea"
+              value={otro}
+              onChange={(e) => {
+                setOtro(e.target.value);
+                setCita(e.target.value); // Establece el valor de cita como el texto ingresado
+              }}
+              required // Hazlo requerido si "Otro" es seleccionado
+            />
+          )}
+        </div>
         <button type="submit">Agendar</button>
       </form>
     </div>
