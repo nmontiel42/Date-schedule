@@ -107,7 +107,7 @@ function App() {
               checked={cita === 'Salir de Picnic'}
               onChange={() => handleCitaChange('Salir de Picnic')}
             />
-            <img src="public/all-our-favorites.webp" alt="Picnic" style={{ width: '100px', height: 'auto' }} />
+            <img src="/all-our-favorites.webp" alt="Picnic" style={{ width: '100px', height: 'auto' }} />
             Salir de Picnic
           </label>
           <label>
@@ -117,7 +117,7 @@ function App() {
               checked={cita === 'Salir a cenar'}
               onChange={() => handleCitaChange('Salir a cenar')}
             />
-            <img src="public/Christmas_table_(Serbian_cuisine).webp" alt="Cena" style={{ width: '100px', height: 'auto' }} />
+            <img src="/Christmas_table_(Serbian_cuisine).webp" alt="Cena" style={{ width: '100px', height: 'auto' }} />
             Salir a cenar
           </label>
           <label>
@@ -127,7 +127,7 @@ function App() {
               checked={cita === 'Noche de juegos'}
               onChange={() => handleCitaChange('Noche de juegos')}
             />
-            <img src="public/juegos-de-mesa.webp" alt="Juegos" style={{ width: '100px', height: 'auto' }} />
+            <img src="/juegos-de-mesa.webp" alt="Juegos" style={{ width: '100px', height: 'auto' }} />
             Noche de juegos
           </label>
           <label>
@@ -137,7 +137,7 @@ function App() {
               checked={cita === 'Sesion de belleza'}
               onChange={() => handleCitaChange('Sesion de belleza')}
             />
-            <img src="public/mascarilla-facial.webp" alt="Belleza" style={{ width: '100px', height: 'auto' }} />
+            <img src="/mascarilla-facial.webp" alt="Belleza" style={{ width: '100px', height: 'auto' }} />
             Sesion de belleza
           </label>
           <label>
