@@ -1,0 +1,26 @@
+.flower-rain {
+    position: fixed;
+    top: -50px; /* Comienza fuera de la vista */
+    width: 100%;
+    pointer-events: none; /* Para que no interfiera con el clic en el botón */
+  }
+  
+  .flower {
+    position: absolute;
+    top: 0;
+    font-size: 24px; /* Ajusta el tamaño de las flores */
+    opacity: 0;
+    animation: fall linear forwards; /* Añade la animación */
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0);
+      opacity: 1; /* Comienza visible */
+    }
+    100% {
+      transform: translateY(100vh); /* Caer hasta el fondo de la pantalla */
+      opacity: 0; /* Desaparece al final */
+    }
+  }
+  

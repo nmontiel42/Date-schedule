@@ -57,16 +57,16 @@ const AppointmentForm = ({ onBack }) => {
 
   return (
     <div className="flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="bg-purple-100 bg-opacity-80 rounded-3xl shadow-2xl p-6 w-full max-w-xl">
+      <form onSubmit={handleSubmit} className="bg-[#F7F7F7] rounded-3xl shadow-xl p-6 w-full max-w-xl">
 
-        <h2 className="text-4xl text-center text-purple-700 mb-6 font-semibold">Agendar una cita</h2>
+        <h2 className="text-4xl text-center text-[#5B3F29] mb-6 font-semibold">Agendar una cita</h2>
 
         {/* Formulario a rellenar */}
-        <div className="flex flex-col space-y-3 mb-4"> {/* Cambiado a space-y-3 para menos espacio vertical */}
+        <div className="flex flex-col space-y-3 mb-4">
 
-          <label className='cursor-default text-green-600'>¿Cómo te llamas?</label>
+          <label className='cursor-default text-[#D36E8E]'>¿Cómo te llamas?</label>
           <input
-            className="rounded-lg border-2 border-purple-300 p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200"
+            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200"
             type="text"
             id="nombre1"
             placeholder="Tu nombre"
@@ -75,9 +75,9 @@ const AppointmentForm = ({ onBack }) => {
             required
           />
 
-          <label className='cursor-default text-green-600'>¿Cuál es tu correo?</label>
+          <label className='cursor-default text-[#D36E8E]'>¿Cuál es tu correo?</label>
           <input
-            className="rounded-lg border-2 border-purple-300 p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200"
+            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200"
             type="email"
             id="userMail"
             placeholder="Tu correo"
@@ -86,9 +86,9 @@ const AppointmentForm = ({ onBack }) => {
             required
           />
 
-          <label className='text-green-600'>¿A quién le pides una cita?</label>
+          <label className='text-[#D36E8E]'>¿A quién le pides una cita?</label>
           <input
-            className="rounded-lg border-2 border-purple-300 p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200"
+            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200"
             type="text"
             id="nombre2"
             placeholder="Su nombre"
@@ -97,9 +97,9 @@ const AppointmentForm = ({ onBack }) => {
             required
           />
 
-          <label className='text-green-600'>¿Cuál es el correo de tu cita?</label>
+          <label className='text-[#D36E8E]'>¿Cuál es el correo de tu cita?</label>
           <input
-            className="rounded-lg border-2 border-purple-300 p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200"
+            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200"
             type="email"
             id="myMail"
             placeholder="Su correo"
@@ -108,18 +108,18 @@ const AppointmentForm = ({ onBack }) => {
             required
           />
 
-          <label className='cursor-default text-green-600'>¿Qué día?</label>
+          <label className='cursor-default text-[#D36E8E]'>¿Qué día?</label>
           <input
-            className="rounded-lg border-2 border-purple-300 p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 cursor-pointer"
+            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200 cursor-pointer"
             type="date"
             id="fecha"
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}
           />
 
-          <label className='cursor-default text-green-600'>¿A qué hora?</label>
+          <label className='cursor-default text-[#D36E8E]'>¿A qué hora?</label>
           <input
-            className="rounded-lg border-2 border-purple-300 p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 cursor-pointer"
+            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200 cursor-pointer"
             type="time"
             id="hora"
             value={hora}
@@ -129,9 +129,9 @@ const AppointmentForm = ({ onBack }) => {
         </div>
 
         <div>
-          <label className='cursor-default text-green-600'>¿Tienes alguna idea en mente?</label>
+          <label className='cursor-default text-[#D36E8E]'>¿Tienes alguna idea en mente?</label>
           <input
-            className='w-full h-24 rounded-lg border-2 border-purple-300 p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 pt-4 pb-4 mt-4' 
+            className='w-full h-24 rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200 pt-4 pb-4 mt-4' 
             type="text"
             id="idea"
             placeholder='Describe la cita aquí'
@@ -141,28 +141,26 @@ const AppointmentForm = ({ onBack }) => {
           />
         </div>
 
-
-
         {/* Botones */}
         <div className='flex justify-between items-center'>
 
-          <button type="button" onClick={onBack} className="mt-2 text-sm text-purple-700 hover:underline ml-3">
+          <button type="button" onClick={onBack} className="mt-2 text-sm text-[#5B3F29] hover:underline ml-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 active:scale-95">
             Atrás
           </button>
 
           {isLoading && (
-            <div className="mt-4 text-center text-purple-600">
+            <div className="mt-4 text-center text-[#5B3F29]">
               Cargando...
             </div>
           )}
 
-          <button type="submit" className="mt-4 rounded-lg bg-purple-600 text-white py-2 px-4 hover:bg-purple-700 transition duration-300">
+          <button type="submit" className="mt-4 rounded-lg bg-[#D36E8E] text-white py-2 px-4 hover:bg-[#C9B29A] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 active:scale-95">
             Agendar
           </button>
 
         </div>
 
-        {/* Notificacion envío */}
+        {/* Notificación de envío */}
         {notification.visible && (
           <div className={`notification ${notification.type}`}>
             {notification.message}
