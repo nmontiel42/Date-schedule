@@ -6,6 +6,7 @@ const AnotherPage = ({ onBack }) => {
     <div>
       <h1>Pagina para mostrar ideas de citas</h1>
       <h2>Todavia en desarrollo ;)</h2>
+      <h3>Proximamente</h3>
       <button 
       onClick={onBack}
       className='border border-black rounded-lg w-full bg-pink-300'
