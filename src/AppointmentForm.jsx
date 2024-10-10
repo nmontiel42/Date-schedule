@@ -58,7 +58,7 @@ const AppointmentForm = ({ onBack }) => {
   return (
     <div className="flex items-center justify-center h-screen w-screen"
     style={{
-      backgroundImage: 'url(public/Appointment.png)',
+      backgroundImage: 'url(/Appointment.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundBlendMode: 'overlay',
