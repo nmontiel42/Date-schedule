@@ -1,0 +1,10 @@
+COLORES
+Rosa:
+- D36E8E
+- B0546F
+- FF8B9B
+- FF6A7B
+
+Marron:
+- 8B7B5A
+- 7A6B4A

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import FlowerRain from './Flowers/FlowerRain'; // Asegúrate de que la ruta sea correcta
+import FlowerRain1 from './Flowers/FlowerRain1'; 
+import FlowerRain2 from './Flowers/FlowerRain2';// Asegúrate de que la ruta sea correcta
 
 const HomePage = ({ onYesClick, onNoClick }) => {
   const [showFlowers, setShowFlowers] = useState(false);
@@ -12,7 +13,8 @@ const HomePage = ({ onYesClick, onNoClick }) => {
   return (
     <div className="flex flex-col items-center bg-[#F7F7F7] rounded-lg shadow-xl p-10 max-w-xl mx-auto relative">
       {/* Aquí puedes agregar el componente de lluvia de flores */}
-      {showFlowers && <FlowerRain />}
+      {showFlowers && <FlowerRain1 />}
+      {showFlowers && <FlowerRain2 />}
 
       <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 text-5xl">
       🪷

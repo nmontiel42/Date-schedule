@@ -4,8 +4,13 @@ import React from 'react';
 const AnotherPage = ({ onBack }) => {
   return (
     <div>
-      <h2>Aqui van ideas de citas</h2>
-      <button onClick={onBack}>Regresar</button>
+      <h1>Pagina para mostrar ideas de citas</h1>
+      <h2>Todavia en desarrollo ;)</h2>
+      <button 
+      onClick={onBack}
+      className='border border-black rounded-lg w-full bg-pink-300'
+      >
+        Regresar</button>
     </div>
   );
 };

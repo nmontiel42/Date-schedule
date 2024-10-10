@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-tl from-green-200 to-purple-300"
       style={{
-        backgroundImage: 'url(public/fondo.png)',
+        backgroundImage: 'url(/fondo.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundBlendMode: 'overlay',

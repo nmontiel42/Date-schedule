@@ -59,8 +59,6 @@ const AppointmentForm = ({ onBack }) => {
     <div className="flex items-center justify-center">
       <form onSubmit={handleSubmit} className="bg-[#F7F7F7] rounded-3xl shadow-xl p-6 w-full max-w-xl">
 
-        <h2 className="text-4xl text-center text-[#5B3F29] mb-6 font-semibold">Agendar una cita</h2>
-
         {/* Formulario a rellenar */}
         <div className="flex flex-col space-y-3 mb-4">
 
