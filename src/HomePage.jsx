@@ -34,11 +34,11 @@ const HomePage = ({ onYesClick, onNoClick }) => {
         </button>
 
         <button 
-  onClick={onNoClick} 
-  className="bg-[#FF8B9B] text-white w-full px-6 py-3 rounded-lg border border-white shadow hover:bg-[#FF6A7B] transition duration-300 transform hover:scale-105"
->
-  Ideas de citas
-</button>
+          onClick={onNoClick} 
+          className="bg-[#FF8B9B] text-white w-full px-6 py-3 rounded-lg border border-white shadow hover:bg-[#FF6A7B] transition duration-300 transform hover:scale-105"
+        >
+          Ideas de citas
+        </button>
 
 
 

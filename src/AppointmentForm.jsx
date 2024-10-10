@@ -56,7 +56,13 @@ const AppointmentForm = ({ onBack }) => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center h-screen w-screen"
+    style={{
+      backgroundImage: 'url(public/Appointment.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundBlendMode: 'overlay',
+    }}>
       <form onSubmit={handleSubmit} className="bg-[#F7F7F7] rounded-3xl shadow-xl p-6 w-full max-w-xl">
 
         {/* Formulario a rellenar */}
