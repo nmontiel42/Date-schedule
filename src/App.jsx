@@ -1,46 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './HomePage';
 import AppointmentForm from './AppointmentForm';
-import AnotherPage from './AnotherPage'; 
+import AnotherPage from './AnotherPage';
 import './index.css';
 
-function App() {
-  const [isAppointmentPage, setIsAppointmentPage] = useState(false);
-  const [isAnotherPage, setIsAnotherPage] = useState(false);
-
-  const handleYesClick = () => {
-    setIsAppointmentPage(true);
-    setIsAnotherPage(false); 
-  };
-
-  const handleNoClick = () => {
-    setIsAnotherPage(true);
-    setIsAppointmentPage(false); 
-  };
-
-  const handleReturn = () => {
-    setIsAppointmentPage(false);
-    setIsAnotherPage(false);
-  };
-
-
-  return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-tl from-green-200 to-purple-300"
-      style={{
-        backgroundImage: 'url(/fondo.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundBlendMode: 'overlay',
-      }}>
-      {isAppointmentPage ? (
-        <AppointmentForm onBack={handleReturn} />
-      ) : isAnotherPage ? (
-        <AnotherPage onBack={handleReturn} /> // Renderiza AnotherPage aquí
-      ) : (
-        <HomePage onYesClick={handleYesClick} onNoClick={handleNoClick} />
-      )}
+const App = () => {
+	const [background, setBackground] = useState('url(/fondo.png)');
+	const location = useLocation();
+  
+	useEffect(() => {
+	  switch (location.pathname) {
+		case '/appointment':
+		  setBackground('url(/Appointment.png)');
+		  break;
+		case '/ideas':
+		  setBackground('url(public/ideas.jpg)'); // Esta línea puede necesitar una imagen si deseas una transición de fondo
+		  break;
+		default:
+		  setBackground('url(/fondo.png)');
+	  }
+	}, [location.pathname]);
+  
+	return (
+	  <div
+		className={`flex justify-center items-center h-screen background-transition`}
+		style={{
+		  backgroundImage: background,
+		  backgroundSize: 'cover',
+		  backgroundPosition: 'center',
+		}}
+	  >
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/appointment" element={<AppointmentForm />} />
+        <Route path="/ideas" element={<AnotherPage />} />
+      </Routes>
     </div>
   );
-}
+};
 
-export default App;
+const WrappedApp = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default WrappedApp;

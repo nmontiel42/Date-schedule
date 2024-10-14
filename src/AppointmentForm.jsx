@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import emailAlert from './assets/emailAlert'; // Asegúrate de que la ruta sea correcta
+import { useNavigate } from 'react-router-dom';
 
-const AppointmentForm = ({ onBack }) => {
+const AppointmentForm = () => {
+  const navigate = useNavigate(); // Hook para la navegación
   const [nombre1, setNombre1] = useState('');
   const [nombre2, setNombre2] = useState('');
   const [fecha, setFecha] = useState('');
@@ -44,7 +46,6 @@ const AppointmentForm = ({ onBack }) => {
     // Limpia los campos a rellenar
     setTimeout(() => {
       setIsLoading(false); // Establece el estado de carga en falso después del temporizador
-      // Limpia los campos a rellenar
       setNombre1('');
       setNombre2('');
       setMyMail('');
@@ -56,21 +57,15 @@ const AppointmentForm = ({ onBack }) => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen w-screen"
-    style={{
-      backgroundImage: 'url(/Appointment.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundBlendMode: 'overlay',
-    }}>
+    <div className="flex items-center justify-center h-screen w-screen">
       <form onSubmit={handleSubmit} className="bg-[#F7F7F7] rounded-3xl shadow-xl p-6 w-full max-w-xl">
 
         {/* Formulario a rellenar */}
         <div className="flex flex-col space-y-3 mb-4">
 
-          <label className='cursor-default text-[#D36E8E]'>¿Cómo te llamas?</label>
+          <label className='cursor-default text-[#D98E72]'>¿Cómo te llamas?</label>
           <input
-            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200"
+            className="rounded-lg border-2 border-[#E3AC75] p-3 focus:outline-none focus:ring-2 focus:ring-[#D98E72] transition duration-200"
             type="text"
             id="nombre1"
             placeholder="Tu nombre"
@@ -79,9 +74,9 @@ const AppointmentForm = ({ onBack }) => {
             required
           />
 
-          <label className='cursor-default text-[#D36E8E]'>¿Cuál es tu correo?</label>
+          <label className='cursor-default text-[#D98E72]'>¿Cuál es tu correo?</label>
           <input
-            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200"
+            className="rounded-lg border-2 border-[#E3AC75] p-3 focus:outline-none focus:ring-2 focus:ring-[#D98E72] transition duration-200"
             type="email"
             id="userMail"
             placeholder="Tu correo"
@@ -90,9 +85,9 @@ const AppointmentForm = ({ onBack }) => {
             required
           />
 
-          <label className='text-[#D36E8E]'>¿A quién le pides una cita?</label>
+          <label className='text-[#D98E72]'>¿A quién le pides una cita?</label>
           <input
-            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200"
+            className="rounded-lg border-2 border-[#E3AC75] p-3 focus:outline-none focus:ring-2 focus:ring-[#D98E72] transition duration-200"
             type="text"
             id="nombre2"
             placeholder="Su nombre"
@@ -101,9 +96,9 @@ const AppointmentForm = ({ onBack }) => {
             required
           />
 
-          <label className='text-[#D36E8E]'>¿Cuál es el correo de tu cita?</label>
+          <label className='text-[#D98E72]'>¿Cuál es el correo de tu cita?</label>
           <input
-            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200"
+            className="rounded-lg border-2 border-[#E3AC75] p-3 focus:outline-none focus:ring-2 focus:ring-[#D98E72] transition duration-200"
             type="email"
             id="myMail"
             placeholder="Su correo"
@@ -112,18 +107,18 @@ const AppointmentForm = ({ onBack }) => {
             required
           />
 
-          <label className='cursor-default text-[#D36E8E]'>¿Qué día?</label>
+          <label className='cursor-default text-[#D98E72]'>¿Qué día?</label>
           <input
-            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200 cursor-pointer"
+            className="rounded-lg border-2 border-[#E3AC75] p-3 focus:outline-none focus:ring-2 focus:ring-[#D98E72] transition duration-200 cursor-pointer"
             type="date"
             id="fecha"
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}
           />
 
-          <label className='cursor-default text-[#D36E8E]'>¿A qué hora?</label>
+          <label className='cursor-default text-[#D98E72]'>¿A qué hora?</label>
           <input
-            className="rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200 cursor-pointer"
+            className="rounded-lg border-2 border-[#E3AC75] p-3 focus:outline-none focus:ring-2 focus:ring-[#D98E72] transition duration-200 cursor-pointer"
             type="time"
             id="hora"
             value={hora}
@@ -133,9 +128,9 @@ const AppointmentForm = ({ onBack }) => {
         </div>
 
         <div>
-          <label className='cursor-default text-[#D36E8E]'>¿Tienes alguna idea en mente?</label>
+          <label className='cursor-default text-[#D98E72]'>¿Tienes alguna idea en mente?</label>
           <input
-            className='w-full h-24 rounded-lg border-2 border-[#C2B59C] p-3 focus:outline-none focus:ring-2 focus:ring-[#D36E8E] transition duration-200 pt-4 pb-4 mt-4' 
+            className='w-full h-24 rounded-lg border-2 border-[#E3AC75] p-3 focus:outline-none focus:ring-2 focus:ring-[#D98E72] transition duration-200 pt-4 pb-4 mt-4' 
             type="text"
             id="idea"
             placeholder='Describe la cita aquí'
@@ -148,17 +143,21 @@ const AppointmentForm = ({ onBack }) => {
         {/* Botones */}
         <div className='flex justify-between items-center'>
 
-          <button type="button" onClick={onBack} className="mt-2 text-sm text-[#5B3F29] hover:underline ml-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 active:scale-95">
+          <button 
+            type="button" 
+            onClick={() => navigate(-1)} // Cambia onClick para usar navigate
+            className="mt-2 text-sm text-[#8AA399] hover:underline ml-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 active:scale-95"
+          >
             Atrás
           </button>
 
           {isLoading && (
-            <div className="mt-4 text-center text-[#5B3F29]">
+            <div className="mt-4 text-center text-[#8AA399]">
               Cargando...
             </div>
           )}
 
-          <button type="submit" className="mt-4 rounded-lg bg-[#D36E8E] text-white py-2 px-4 hover:bg-[#C9B29A] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 active:scale-95">
+          <button type="submit" className="mt-4 rounded-lg bg-[#D98E72] text-white py-2 px-4 hover:bg-[#C77A5D] transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 active:scale-95">
             Agendar
           </button>
 

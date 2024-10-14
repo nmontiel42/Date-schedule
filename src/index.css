@@ -25,21 +25,9 @@
     opacity: 0; /* Oculto */
   }
 
-  .fade-enter {
-    opacity: 0; /* Comienza invisible */
+  .background-transition {
+	transition: background-image 0.5s ease;
   }
   
-  .fade-enter-active {
-    opacity: 1; /* Finaliza completamente visible */
-    transition: opacity 0.5s ease-in-out; /* Transición suave */
-  }
   
-  .fade-exit {
-    opacity: 1; /* Comienza completamente visible */
-  }
-  
-  .fade-exit-active {
-    opacity: 0; /* Finaliza invisible */
-    transition: opacity 0.5s ease-in-out; /* Transición suave */
-  }
   
