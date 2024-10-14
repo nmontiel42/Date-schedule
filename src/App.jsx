@@ -15,7 +15,7 @@ const App = () => {
 		  setBackground('url(/Appointment.png)');
 		  break;
 		case '/ideas':
-		  setBackground('url(public/ideas.jpg)'); // Esta línea puede necesitar una imagen si deseas una transición de fondo
+		  setBackground('url(/ideas.jpg)'); // Esta línea puede necesitar una imagen si deseas una transición de fondo
 		  break;
 		default:
 		  setBackground('url(/fondo.png)');
