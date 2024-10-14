@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Card from './components/card'; // Asegúrate de que la ruta sea correcta
+import Card from './card'; // Asegúrate de que la ruta sea correcta
 
 const AnotherPage = () => {
   const navigate = useNavigate(); // Hook para la navegación
