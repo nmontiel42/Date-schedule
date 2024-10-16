@@ -44,7 +44,7 @@ const HomePage = () => {
         🪷
       </div>
 
-      <h1 className="text-4xl font-bold text-[#8D6A55] mb-4 cursor-default">¡Bienvenid@!</h1>
+      <h1 className="text-4xl font-bold text-[#8D6A55] mb-4 cursor-default">¡Biienvenid@!</h1>
       <h2 className="text-lg text-[#8AA399] mb-6 cursor-default">¿Qué deseas hacer?</h2>
 
       <div className="flex flex-col space-y-4 w-full">
